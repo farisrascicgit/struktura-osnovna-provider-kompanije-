@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo"><img src="nokia-new-logo.png" alt="Company Logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="#private">Privatni Korisnici</a></li>
+                    <li><a href="#business">Poslovni Korisnici</a></li>
+                    <li><a href="#education">Edukacija</a></li>
+                    <li><a href="#news">Novosti</a></li>
+                    <li><a href="#careers">Karijera</a></li>
+                </ul>
+            </nav>
+            <button @click="toggleLoginForm">Prijava</button>
+        </header>
+        <main>
+            <section id="private">
+                <h1>Privatni Korisnici</h1>
+                <p>Informacije za privatne korisnike.</p>
+            </section>
+            <section id="business">
+                <h1>Poslovni Korisnici</h1>
+                <p>Informacije za poslovne korisnike.</p>
+            </section>
+            <section id="education">
+                <h1>Edukacija</h1>
+                <p>Informacije o edukaciji.</p>
+            </section>
+            <section id="news">
+                <h1>Novosti</h1>
+                <p>Najnovije vijesti.</p>
+            </section>
+            <section id="careers">
+                <h1>Karijera</h1>
+                <p>Prilike za karijeru u našoj kompaniji.</p>
+            </section>
+        </main>
+        <div v-if="showLoginForm" class="login-form">
+            <form @submit.prevent="submitForm">
+                <input type="text" v-model="name" placeholder="Ime">
+                <input type="email" v-model="email" placeholder="Email">
+                <input type="text" v-model="phone" placeholder="Broj telefona">
+                <button type="submit">Prijava</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="script.js"></script>
+</body>
+</html>
